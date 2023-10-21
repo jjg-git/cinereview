@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mobdeve.s15.gironasayasranario.cinereview"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.mobdeve.s15.gironasayasranario.cinereview"
@@ -32,6 +32,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
