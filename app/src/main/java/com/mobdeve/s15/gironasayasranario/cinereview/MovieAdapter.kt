@@ -6,22 +6,23 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.mobdeve.s15.gironasayasranario.cinereview.databinding.MovieSelectBinding
 import com.mobdeve.s15.gironasayasranario.cineview.Movie
 
 class MovieAdapter(val data: ArrayList<Movie>, val movieActivityResultLauncher: ActivityResultLauncher<Intent>) : Adapter<MovieHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieHolder {
-        val itemViewBinding: ItemLayoutBinding = ItemLayoutBinding.inflate(
+        val itemViewBinding: MovieSelectBinding = MovieSelectBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return MyViewHolder(itemViewBinding.root)
+        return MovieHolder(itemViewBinding.root)
     }
 
     /*
     *   TODO: Complete the onBindViewHolder logic.
     * */
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieHolder, position: Int) {
         holder.bindData(data.get(position))
     }
 
