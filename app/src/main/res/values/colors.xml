@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="logo_color1">#D7DFF4</color>
     <color name="logo_color2">#2CD178</color>
+    <color name="green_branding">#00FF00</color>
+    <color name="pleasing_green">#4CAF50</color>
+    <color name="spotify_green">#1DB954</color>
 </resources>

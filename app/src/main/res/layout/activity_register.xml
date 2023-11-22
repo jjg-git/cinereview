@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/logo_font"
+            android:text="CINE"
+            android:textColor="@color/logo_color1"
+            android:textSize="70sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/logo_font"
+            android:text="LOGIN PAGE"
+            android:textColor="@color/logo_color2"
+            android:textSize="70sp" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/userInfoText"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_border_spotify"
+        android:hint="Full Name"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#808080" />
+
+    <TextView
+        android:id="@+id/userInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_layout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="User Information"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/userLoginText"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_border_spotify"
+        android:hint="Username/Email"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#808080"/>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/usernameInput"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_border_spotify"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#808080"/>
+
+    <EditText
+        android:id="@+id/confirmPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/passwordInput"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_border_spotify"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#808080"/>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/confirmPasswordInput"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="#1DB954"
+        android:text="Become a member!"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/userLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameInput"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="User Log-In Credentials"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

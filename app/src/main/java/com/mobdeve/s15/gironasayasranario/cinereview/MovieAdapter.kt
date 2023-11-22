@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.mobdeve.s15.gironasayasranario.cinereview.databinding.MovieSelectBinding
 import com.mobdeve.s15.gironasayasranario.cineview.Movie
@@ -16,7 +17,7 @@ class MovieAdapter(val data: ArrayList<Movie>, val movieActivityResultLauncher: 
             parent,
             false
         )
-        return MovieHolder(itemViewBinding.root)
+        return MovieHolder(itemViewBinding)
     }
 
     /*
