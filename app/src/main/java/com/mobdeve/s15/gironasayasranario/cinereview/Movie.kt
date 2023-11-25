@@ -8,4 +8,6 @@ class Movie (
     val promoPics: ArrayList<String> = ArrayList<String>(),
     val rating: String = "",
     val thumbnail: Int,
+    val whichCinema: String = "",
+    val nameOfTheater: String = ""
 )
