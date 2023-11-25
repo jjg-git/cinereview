@@ -1,0 +1,19 @@
+Tasks to do for today
+[ ] UI and UX
+    [ ] Theater list (Christian)
+    [ ] Scheduling (JJ)
+    [ ] Seating arrangement(JJ)
+    [ ] Movie list and details (JJ)
+    [ ] User profile (Christian)
+[ ] Settings (Christian)
+[ ] Schedule Testing (JJ)
+
+Tasks for later
+[ ] Setup Firebase server (Christian)
+[ ] Geolocation API (JJ)
+[ ] Account management
+    [ ] Registration
+    [ ] Login
+    [ ] Forget password
+[ ] Searching movie (JJ)
+[ ] Movie Reviews (JJ)
