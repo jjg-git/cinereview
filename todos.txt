@@ -5,7 +5,7 @@ Tasks to do for today
     [ ] Seating arrangement(JJ)
     [ ] Movie list and details (JJ)
     [ ] User profile (Christian)
-[ ] Settings (Christian)
+[ ] Settings (C)
 [ ] Schedule Testing (JJ)
 
 Tasks for later
