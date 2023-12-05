@@ -13,12 +13,15 @@ import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.google.android.gms.location.LocationServices
 import com.mobdeve.s15.gironasayasranario.cinereview.databinding.ActivityMainBinding
+import com.mobdeve.s15.gironasayasranario.cinereview.fragments.CinemaSelectFragment
 import com.mobdeve.s15.gironasayasranario.cineview.Movie
 import java.security.Permission
 
@@ -37,7 +40,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
-
     }
 
 }
