@@ -34,5 +34,29 @@
         <argument
             android:name="rating"
             app:argType="string" />
+        <action
+            android:id="@+id/action_movieDetailFrag_to_schedulingFragment"
+            app:destination="@id/schedulingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/schedulingFragment"
+        android:name="com.mobdeve.s15.gironasayasranario.cinereview.fragments.SchedulingFragment"
+        android:label="fragment_scheduling"
+        tools:layout="@layout/fragment_scheduling" >
+        <argument
+            android:name="movie"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_schedulingFragment_to_cinemaSelectFragment"
+            app:destination="@id/cinemaSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cinemaSelectFragment"
+        android:name="com.mobdeve.s15.gironasayasranario.cinereview.fragments.CinemaSelectFragment"
+        android:label="CinemaSelectFragment" >
+        <argument
+            android:name="fromMain"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
 </navigation>
