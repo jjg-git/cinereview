@@ -17,13 +17,34 @@ data class Time (
     val amPM: AMPM
 ) {
     companion object {
-        fun convertToTime(timeStr: String): Time {
-            val timeParts = timeStr.split(" ")
-            val hourMinutePart = timeParts[0].split(":")
+        fun convertToTime(timeRawStr: String): Time {
+            val timeFormatRegex: Regex =
+                Regex("((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))")
+            val amPMRegex: Regex =
+                Regex("(([AaPp][Mm]))")
+            val hhMMRegex: Regex =
+                Regex("((1[0-2]|0?[1-9]):([0-5][0-9]))")
 
-            val hourInt = hourMinutePart[0].toInt()
-            val minuteInt = hourMinutePart[1].toInt()
-            val newAMPM = if (timeParts[1] == "AM") AMPM.AM else AMPM.PM
+            var hourInt: Int = 0
+            var minuteInt: Int = 0
+            var newAMPM: AMPM = AMPM.AM
+
+
+            // Show error if the input does not follow HH:MM PM format
+            assert(timeFormatRegex.matches(timeRawStr) == true)
+
+            val hhMMStr = timeRawStr.substring(hhMMRegex.find(timeRawStr)!!.range) // Outputs HH:MM
+            val amPMStr = timeRawStr.substring(amPMRegex.find(timeRawStr)!!.range) // Outputs either AM or PM
+
+            val hhMMSplit = hhMMStr.split(":") // Outputs [HH, MM]
+
+            hourInt = hhMMSplit[0].toInt()
+            minuteInt = hhMMSplit[1].toInt()
+
+            when (amPMStr) {
+                "AM" -> newAMPM = AMPM.AM
+                "PM" -> newAMPM = AMPM.PM
+            }
 
             return Time(hourInt, minuteInt, newAMPM)
         }

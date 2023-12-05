@@ -1,46 +1,19 @@
 package com.mobdeve.s15.gironasayasranario.cinereview
 
-
-import com.google.android.gms.location.FusedLocationProviderClient
-import android.location.Location
-import CinemaAdapter
-import android.content.Intent
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.google.android.gms.location.LocationServices
-import com.google.firebase.FirebaseApp
-import com.google.firebase.firestore.FirebaseFirestore
 import com.mobdeve.s15.gironasayasranario.cinereview.databinding.ActivityMainBinding
 import com.mobdeve.s15.gironasayasranario.cineview.Movie
-const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 101
+
 class MainActivity : AppCompatActivity() {
-
-    companion object {
-        private const val TAG = "MainActivity"
-    }
-
-    private val db = FirebaseFirestore.getInstance()
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var data: ArrayList<Movie>
-    private lateinit var movieRecycler: RecyclerView
-    private lateinit var movieLayout: LinearLayoutManager
-    private lateinit var cinemaAdapter: CinemaAdapter
-
-    private val movieLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-    }
+    private lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

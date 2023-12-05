@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black"
+    tools:context=".fragments.MovieDetailFragment">
+
+    <ImageView
+        android:id="@+id/moviePosterIv"
+        android:layout_width="134dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/titleMovieTv"
+        app:layout_constraintTop_toBottomOf="@+id/titleMovieTv"
+        app:srcCompat="@drawable/webarebears" />
+
+    <TextView
+        android:id="@+id/titleMovieTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/logo_font"
+        android:text="We Bare Bears"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="242dp"
+        android:layout_height="202dp"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/moviePosterIv"
+        app:layout_constraintTop_toTopOf="@+id/moviePosterIv">
+
+        <ImageView
+            android:id="@+id/ratingIv"
+            android:layout_width="32dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/mtrcb_g" />
+
+        <LinearLayout
+            android:id="@+id/directorLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Director:"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/directorTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daniel Chong"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/castsLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cast:"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/castTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Eric Edelstein, Bobby Moynihan, Demetri Martin"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="381dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/moviePosterIv" />
+
+    <Button
+        android:id="@+id/buyTicketBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Buy ticket!"
+        app:layout_constraintEnd_toEndOf="@+id/descriptionTv"
+        app:layout_constraintStart_toStartOf="@+id/descriptionTv"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTv" />
+</androidx.constraintlayout.widget.ConstraintLayout>
