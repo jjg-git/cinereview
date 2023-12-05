@@ -29,7 +29,7 @@
             android:id="@+id/cinemafragC"
             android:name="com.mobdeve.s15.gironasayasranario.cinereview.fragments.CinemaSelectFragment"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="#F37D7D"
