@@ -1,7 +1,9 @@
 package com.mobdeve.s15.gironasayasranario.cinereview.fragments
 
 import CinemaAdapter
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.health.connect.datatypes.ExerciseRoute
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
@@ -13,10 +15,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.mobdeve.s15.gironasayasranario.cinereview.Cinema
 import com.mobdeve.s15.gironasayasranario.cinereview.DBController
-import com.mobdeve.s15.gironasayasranario.cinereview.R
 import com.mobdeve.s15.gironasayasranario.cinereview.databinding.FragmentCinemaSelectBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,6 +35,7 @@ class CinemaSelectFragment : Fragment() {
     // TODO: Rename and change types of parameters
 //    private var cinema_name: String? = null
 //    private var param2: String? = null
+    @SuppressLint("MissingPermission")
     val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
 //        permissions ->
 ////        if (ContextCompat.checkSelfPermission(this.applicationContext,
@@ -46,13 +49,29 @@ class CinemaSelectFragment : Fragment() {
 //                PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
 //        }
         permissions ->
-            permissions.entries.forEach {
-                Log.d("DEBUG", "${it.key} = ${it.value}")
-                if (!it.value){
-                    return@registerForActivityResult
+            when {
+                permissions.getOrDefault(
+                    android.Manifest.permission.ACCESS_FINE_LOCATION,
+                    false
+                ) -> {
+                    val fusedLocationClient =
+                        LocationServices.getFusedLocationProviderClient(requireContext())
+                    fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+                        if (location != null) {
+                            fetchCinemas(location)
+                        }
+                    }
+                }
+
+                permissions.getOrDefault(
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                    false
+                ) -> {
+                    Log.d("DEBUG", "Accepted course location")
                 }
             }
     }
+
 
     private val TAG: String? = "CinemaSelectFragment"
     private lateinit var cinemaAdapter: CinemaAdapter
@@ -65,13 +84,16 @@ class CinemaSelectFragment : Fragment() {
 //            cinema_name = it.getString(ARG_CINEMA_NAME)
 //            param2 = it.getString(ARG_DISTANCE)
 //        }
-        Log.d("DEBUG", requestPermissionLauncher.launch())
+        cinemaAdapter = CinemaAdapter(emptyList())
+        getLastLocation()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = FragmentCinemaSelectBinding.inflate(inflater)
+        binding.cinemaRv.adapter = cinemaAdapter
+
 //        initializeRecyclerView()
         return binding.root
     }
@@ -144,7 +166,7 @@ class CinemaSelectFragment : Fragment() {
 //                PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
 //        }
 
-    }
+//}
 //    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
 //        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 //        when (requestCode) {
@@ -156,7 +178,9 @@ class CinemaSelectFragment : Fragment() {
 //        }
 //    }
 
-//    fun getLastLocation() {
+    fun getLastLocation() {
+        requestPermissionLauncher.launch(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION))
+
 //        if (ContextCompat.checkSelfPermission(this.applicationContext,
 //                android.Manifest.permission.ACCESS_FINE_LOCATION)
 //            == PackageManager.PERMISSION_GRANTED) {
@@ -173,5 +197,5 @@ class CinemaSelectFragment : Fragment() {
 //            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
 //                PackageManager.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
 //        }
-//    }
+    }
 }
