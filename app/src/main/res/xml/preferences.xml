@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:key="notifications"
+        android:title="Enable notifications"
+        android:summary="Receive notifications for new movie releases"
+        android:defaultValue="true" />
+
+
+    <EditTextPreference
+        android:key="signature"
+        android:title="Email Signature"
+        android:summary="Define your email signature"
+        android:inputType="text" />
+
+
+    <PreferenceCategory android:title="Account">
+        <Preference
+            android:key="edit_profile"
+            android:title="Edit Profile" />
+        <Preference
+            android:key="user_profile"
+            android:title="User Profile"
+            android:summary="View and edit your user profile" />
+        <Preference
+            android:key="logout"
+            android:title="Log Out" />
+    </PreferenceCategory>
+</PreferenceScreen>

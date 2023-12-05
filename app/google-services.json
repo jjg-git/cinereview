@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "837719206301",
+    "project_id": "cineview-3e304",
+    "storage_bucket": "cineview-3e304.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837719206301:android:b445c4bc5222e88602a774",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s15.gironasayasranario.cinereview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3FnHM19vphAvk6HIKas9upPSdegCHJi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

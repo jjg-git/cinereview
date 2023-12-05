@@ -27,7 +27,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="0"
                 android:contentDescription="Status of schedule"
-                android:src="@tools:sample/avatars" />
+                 />
 
             <TextView
                 android:id="@+id/sched_time_range_tv"

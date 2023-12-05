@@ -18,16 +18,17 @@ data class Time (
 ) {
     companion object {
         fun convertToTime(timeStr: String): Time {
-            var hourInt: Int
-            var minuteInt: Int
-            var newAMPM: AMPM
+            val timeParts = timeStr.split(" ")
+            val hourMinutePart = timeParts[0].split(":")
 
-            // TODO: Substring from 2 characters from start
-            hourInt = timeStr.substring()
+            val hourInt = hourMinutePart[0].toInt()
+            val minuteInt = hourMinutePart[1].toInt()
+            val newAMPM = if (timeParts[1] == "AM") AMPM.AM else AMPM.PM
 
             return Time(hourInt, minuteInt, newAMPM)
         }
     }
+
     fun compareTo(time: Time):Int {
         if (this.hour == time.hour && this.minute == time.minute) {
             return 0

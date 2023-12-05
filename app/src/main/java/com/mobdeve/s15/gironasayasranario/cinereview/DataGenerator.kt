@@ -13,5 +13,6 @@ class DataGenerator {
             data.add(Movie("Jujutsu Kaisen 0", thumbnail = R.drawable.jujutsukaisen0))
             return data
         }
+
     }
 }
