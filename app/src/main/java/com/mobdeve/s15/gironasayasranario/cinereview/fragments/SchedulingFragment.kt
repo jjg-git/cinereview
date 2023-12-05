@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.mobdeve.s15.gironasayasranario.cinereview.R
+import com.mobdeve.s15.gironasayasranario.cinereview.databinding.FragmentSchedulingBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +28,7 @@ class SchedulingFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var scheduleRV: RecyclerView
+    private lateinit var binding: FragmentSchedulingBinding
 
     private val TAG = "Scheduling Fragment"
 
@@ -46,11 +48,11 @@ class SchedulingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_scheduling, container, false)
-        scheduleRV = view.findViewById(R.id.scheduleRv)
+        binding = FragmentSchedulingBinding.inflate(inflater)
+        scheduleRV = binding.scheduleRv
         scheduleRV.adapter = ScheduleAdapter()
         Log.d(TAG, "OnCreateView()")
-        return view
+        return binding.root
     }
 
     companion object {
