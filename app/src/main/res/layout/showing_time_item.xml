@@ -25,7 +25,9 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="0"
             android:contentDescription="Status of schedule"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:foregroundTintMode="src_in"
+            app:srcCompat="@drawable/indicator_circle"
+            tools:srcCompat="@drawable/indicator_circle" />
 
         <TextView
             android:id="@+id/sched_time_range_tv"
