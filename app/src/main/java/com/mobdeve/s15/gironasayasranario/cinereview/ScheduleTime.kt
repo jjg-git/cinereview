@@ -8,13 +8,18 @@ data class ScheduleTime(
         return "$fromTime - ${toTime.toString().padStart(2, '0')}"
     }
 
-
+    fun toHashMap():HashMap<String, String> {
+        return hashMapOf(
+            "fromTime" to fromTime.toString(),
+            "toTime" to toTime.toString()
+        )
+    }
 }
 
 data class Time (
-    val hour: Int,
-    val minute: Int,
-    val amPM: AMPM
+    var hour: Int,
+    var minute: Int,
+    var amPM: AMPM
 ) {
     companion object {
         fun convertToTime(timeRawStr: String): Time {
@@ -49,6 +54,15 @@ data class Time (
             return Time(hourInt, minuteInt, newAMPM)
         }
     }
+    constructor(seconds: Int): this(0, 0, AMPM.AM) {
+        this.hour = seconds / 60
+        this.minute = seconds / 60 / 60
+
+        if (hour > 12) {
+            hour -= 12
+            amPM = AMPM.PM
+        }
+    }
 
     fun compareTo(time: Time):Int {
         if (this.hour == time.hour && this.minute == time.minute) {
@@ -75,6 +89,17 @@ data class Time (
             AMPM.PM -> amPMStr = "PM"
         }
         return "$hour:$minute ${amPMStr}"
+    }
+
+    fun toHashMap(): HashMap<String, Any> {
+        return hashMapOf(
+            "hour" to hour,
+            "minute" to minute,
+            "amPM" to when (amPM) {
+                AMPM.AM -> "AM"
+                AMPM.PM -> "PM"
+            }
+        )
     }
 }
 
