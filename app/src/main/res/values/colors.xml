@@ -9,4 +9,7 @@
     <color name="spotify_green">#1DB954</color>
     <color name="bg_black">#121212</color>
     <color name="item_select">#797979</color>
+    <color name="status_available">#8BC34A</color>
+    <color name="status_reserved">#F44336</color>
+
 </resources>
