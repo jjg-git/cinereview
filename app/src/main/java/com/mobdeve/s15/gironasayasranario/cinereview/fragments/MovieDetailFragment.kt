@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.mobdeve.s15.gironasayasranario.cinereview.R
+import com.mobdeve.s15.gironasayasranario.cinereview.ReservationController
 import com.mobdeve.s15.gironasayasranario.cinereview.databinding.FragmentMovieDetailBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -52,6 +54,8 @@ class MovieDetailFragment : Fragment() {
 
             Log.d(TAG, "$it")
         }
+
+        Log.d(TAG, "OnCreate()")
     }
 
     override fun onCreateView(
@@ -61,6 +65,8 @@ class MovieDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentMovieDetailBinding.inflate(inflater)
         val view = binding.root
+
+        Log.d(TAG, "OnCreateView()")
 
         binding.titleMovieTv.setText(name)
         binding.descriptionTv.setText(description)
@@ -74,6 +80,10 @@ class MovieDetailFragment : Fragment() {
             else -> binding.ratingIv.setImageResource(R.drawable.mtrcb_g)
         }
 
+        binding.buyTicketBtn.setOnClickListener {
+            name?.let { it1 -> ReservationController.pickMovie(it1) }
+            findNavController().navigate(R.id.schedulingFragment)
+        }
 
         return view
     }

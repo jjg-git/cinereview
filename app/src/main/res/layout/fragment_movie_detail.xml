@@ -16,7 +16,7 @@
         android:fontFamily="@font/logo_font"
         android:text="We Bare Bears"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="@dimen/title_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

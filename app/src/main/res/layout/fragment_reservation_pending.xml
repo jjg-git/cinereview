@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black"
+    tools:context=".fragments.ReservationPendingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="244dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:fontFamily="@font/logo_font"
+        android:gravity="center"
+        android:text="@string/waiting_ticket"
+        android:textColor="@color/logo_color1"
+        android:textSize="@dimen/title_size" />
+
+</FrameLayout>
